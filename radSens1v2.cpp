@@ -29,6 +29,7 @@ bool ClimateGuard_RadSens1v2::updateData()
     }
     if (_data[0] == 0x7D)
     {
+	_pulse_cnt += (_data[9] << 8) | _data[10];
         return true;
     }
     return false;
@@ -76,7 +77,6 @@ uint32_t ClimateGuard_RadSens1v2::getNumberOfPulses()
 {
     if (updateData())
     {
-        _pulse_cnt += (_data[9] << 8) | _data[10];
         return _pulse_cnt;
     }
     else
