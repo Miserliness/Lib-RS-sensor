@@ -1,1 +1,1 @@
-# radSens1v2
+# Lib RS sensor
